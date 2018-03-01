@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="fr">
+
+    <meta name="Description" content="Web développeur freelance dans la province du Brabant Wallon. Création de site internet responsive et ergonomique.">
+    <meta name="Keywords" content="développeur, developer, web, dev, freelance, Dos Santos, Bastien, Dos Santos Bastien, php, jquery, mysql, internet, site, Belgique, Genval, Brabant Wallon,">
+    <meta name="Author" content="Bastien Dos Santos">
+    <meta name="Robots" content="all">
+
+    <link rel="shortcut icon" href="img/logo.ico">
+    <title>Bastien Dos Santos - Développeur web</title>
+    <link href="{{ asset('css/hamburger.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <div id="loader">
+        <div>
+            <object id="logo-animate" type="image/svg+xml" data="{{ asset('img/logo2.svg') }}"></object>
+        </div>
+    </div>
+
+    <div id="menu-responsive">
+        <ul>
+            <li><a class="js-scrollTo link-mobile" href="#home">Accueil</a></li>
+            <li><a class="js-scrollTo link-mobile" href="#skills-mobile">Compétences</a></li> 
+            <li><a class="js-scrollTo link-mobile" href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div id="wrapper">
+        <nav class="sticky">
+            <ul class="menu-lg">
+                <li><a class="js-scrollTo underline" href="#skills-computer">Compétences</a></li> 
+                <li id="logotus"><a class="js-scrollTo" href="#home"><img id="logo-nav" src="{{ asset('img/logo2.svg') }}" alt="logo"></a></li>
+                <li><a class="js-scrollTo underline" href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-sm hamburger hamburger--emphatic" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>  
+        </nav>
+        
+        <header id="home" class="anchor">
+            <div id="title">
+                <h1>Bastien Dos Santos</h1>
+                <h2>Développeur Web</h2>
+            </div>
+        </header>
+
+        <section>
+            <article id="skills-computer" class="anchor">
+                <h3>Compétences</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <img id="design" src="{{ asset('img/icon_pencil.svg') }}" alt="logo cloud">
+                    </div>
+                    <div class="skill">
+                        <img id="dev" src="{{ asset('img/icon_code.svg') }}" alt="logo cloud">    
+                    </div>
+                    <div class="skill">
+                        <img id="cloud" src="{{ asset('img/icon_cloud.svg') }}" alt="logo cloud">    
+                    </div>
+                </div>
+                <div class="skills-container">
+                    <div class="skill" id="design-title"> 
+                        <h4>CONCEPTION</h4>
+                    </div>
+                    <div class="skill" id="dev-title">
+                        <h4>DÉVELOPPEMENT</h4>
+                    </div>
+                    <div class="skill" id="cloud-title">
+                        <h4>ADMINISTRATION RÉSEAUX</h4>
+                    </div>
+                </div>
+
+                <div class="skills-container">
+                    <div class="skill" id="design-description"> 
+                        <p>Analyse des besoins, Ergonomie, UML</p>
+                    </div>
+                    <div class="skill" id="dev-description">
+                        <p>
+                        Front &amp; Back, HTML/CSS, Javascript, NodeJS, jQuery,
+                        PHP, Symfony
+                        </p>
+                    </div>
+                    <div class="skill" id="cloud-description">
+                        <p>
+                            Hébergement, Serveur Web, Linux
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="skills-mobile" class="anchor">
+                    <h3>Compétences</h3>
+
+                    <div id="skill-design" class="skill">
+                        <h4>CONCEPTION</h4>
+                        <img id="design" src="{{ asset('img/icon_pencil.svg') }}" alt="logo cloud">
+                        <p>Analyse des besoins, Ergonomie, UML</p>
+                    </div>
+
+                    <div id="skill-dev" class="skill">
+                        <h4>DÉVELOPPEMENT</h4>
+                        <img id="dev" src="{{ asset('img/icon_code.svg') }}" alt="logo cloud">    
+                        <p>
+                            Front &amp; Back, HTML/CSS, Javascript, NodeJS, jQuery,
+                            PHP, Symfony
+                        </p>                    </div>
+
+                    <div id="skill-network" class="skill">
+                        <h4>ADMINISTRATION RÉSEAUX</h4>
+                        <img id="cloud" src="{{ asset('img/icon_cloud.svg') }}" alt="logo cloud">    
+                        <p>
+                            Hébergement, Serveur Web, Linux
+                        </p>                    
+                    </div>
+            </article>
+
+            
+
+            <article id="contact" class="anchor">
+                <h3>Contact</h3>
+                <h4>
+                    Vous souhaitez obtenir de plus amples informations sur mon profil ? Discuter d'un projet ? N'hésitez pas à me contacter !
+                </h4>
+
+                <form action="{{ path('sendmail') }}" method="post" id="contact-form">
+                    <input name="nom" type="text" id="nom" placeholder="NOM" required> <input name="prenom" type="text" id="prenom" placeholder="PRENOM" required>
+                    <input name="email" id="email" type="email" placeholder="EMAIL" required>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="VOTRE MESSAGE" required></textarea>
+                    <input id="submit" type="submit" value="ENVOYER">
+                </form>
+                <div id="message_sent"></div>
+            </article>
+        </section>
+        <footer>
+            <div id="signature">
+                © 2017 Bastien Dos Santos.                    
+            </div>
+            <div id="network">
+                <a href="https://www.linkedin.com/in/bastien-dos-santos/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="mailto:bastiendos@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.1/vivus.js" defer></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+    <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="https://use.fontawesome.com/473f0dac1b.js" defer></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-102080950-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
